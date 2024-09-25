@@ -1,0 +1,9 @@
+<launch>
+    <!-- Arguments -->
+    <arg name="q_path" default="$(find sair-p3-georgekreye)/q_tables/part2_q_table_best.pkl"
+    doc="Path for Q-table loading (no extension)" />
+
+    <!-- Nodes -->
+    <node name="wall_follower" pkg="sair-p3-georgekreye" type="RealWallFollower.py" output="screen"
+     args="$(arg q_path) -v" />
+</launch>

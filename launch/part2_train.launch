@@ -1,0 +1,19 @@
+<launch>
+    <!-- Arguments -->
+    <arg name="q_path" default="$(find sair-p3-georgekreye)/q_tables/part2_q_table.pkl"
+    doc="Path for Q-table loading/dumping" />
+    <arg name="qi_path" default="$(find sair-p3-georgekreye)/q_tables/instances/part2_q_table"
+    doc="Path for Q-table instance dumping (no extension)" />
+    <arg name="crg_path" default="$(find sair-p3-georgekreye)/graphs/part2_cr_graph.pkl" />
+    <arg name="rcg_path" default="$(find sair-p3-georgekreye)/graphs/part2_rc_learning_graph.pkl"
+    doc="Path for right-close learning graph loading/dumping" />
+    <arg name="lcg_path" default="$(find sair-p3-georgekreye)/graphs/part2_lc_learning_graph.pkl"
+    doc="Path for left-close learning graph loading/dumping" />
+    <arg name="fcg_path" default="$(find sair-p3-georgekreye)/graphs/part2_fc_learning_graph.pkl"
+    doc="Path for front-close learning graph loading/dumping" />
+
+    <!-- Nodes -->
+    <node name="wall_follower" pkg="sair-p3-georgekreye" type="BasicWallFollower.py" output="screen"
+     args="-v -qp $(arg q_path) -qip $(arg qi_path) -crg $(arg crg_path) -rcg $(arg rcg_path) -lcg $(arg lcg_path)
+     -fcg $(arg fcg_path)" />
+</launch>

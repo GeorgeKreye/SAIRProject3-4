@@ -1,0 +1,3 @@
+<launch>
+    <node name="wall_follower" pkg="sair-p3-georgekreye" type="BasicWallFollower.py" output="screen" args="--preset"/>
+</launch>
